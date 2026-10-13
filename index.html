@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050711">
+<meta name="description" content="LUMORA Forex Mobile Bot launch countdown.">
+<title>LUMORA — Forex Mobile Bot Launch</title>
+<style>
+:root{--black:#050711;--navy:#071321;--gold:#ffc64a;--gold2:#ffe9a1;--amber:#ff9e18;--white:#fff;--muted:#c2c7d4;--cyan:#00d9ff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;overflow-x:hidden;color:var(--white);font-family:Arial,Helvetica,sans-serif;background:radial-gradient(ellipse at 50% 32%,#10243a 0,#070c19 46%,#02040a 100%)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background:linear-gradient(90deg,transparent 49.8%,#d7a63a33 50%,transparent 50.2%),linear-gradient(transparent 49.8%,#d7a63a22 50%,transparent 50.2%);background-size:58px 58px;mask-image:linear-gradient(#000,transparent 88%)}
+.ambient{position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 100%,#ff9e1817,transparent 44%),radial-gradient(ellipse at 5% 45%,#7e35ff13,transparent 35%)}
+main{position:relative;z-index:1;min-height:100vh;display:flex;justify-content:center;align-items:center;padding:32px 16px}
+body.full-launch main{padding:0;min-height:100vh}
+body.full-launch .wrap{width:100%;min-height:100vh}
+body.full-launch #launch-view{min-height:100vh}
+body.full-launch .stage{width:100%;max-width:none;min-height:100vh;margin:0;border:0;border-radius:0;display:flex;align-items:center;justify-content:center;padding:clamp(22px,4vh,54px) 20px}
+body.full-launch .stage:before{background:radial-gradient(ellipse at 50% 100%,#ffad1b45,transparent 38%),linear-gradient(90deg,#ffbc3033,transparent 22%,transparent 78%,#ffbc3033)}
+body.full-launch .reveal-content{width:min(100%,1100px)}
+body.full-launch .reveal-logo{width:min(290px,55vw);max-height:110px}
+body.full-launch .available{font-size:clamp(42px,7vw,86px)}
+body.full-launch .subline{font-size:clamp(13px,2.1vw,22px);padding:15px 30px}
+body.full-launch .offer-grid{width:min(100%,760px);gap:18px}
+body.full-launch .offer{padding:22px 16px}
+body.full-launch .offer strong{font-size:clamp(42px,6vw,72px)}
+body.full-launch .auto{font-size:15px}
+body.full-launch .cta{font-size:clamp(14px,2vw,19px);padding:18px 38px}
+body.full-launch .risk{max-width:850px}
+body.full-launch footer{display:none}
+body.full-launch .curtains span{width:50%;}
+.wrap{width:min(100%,1000px);text-align:center}
+.logo{display:block;width:min(390px,76vw);max-height:135px;object-fit:contain;margin:0 auto 24px;filter:drop-shadow(0 0 18px #00cfff20)}
+.eyebrow{font-size:11px;font-weight:900;letter-spacing:.34em;color:var(--gold);text-transform:uppercase;margin:0 0 17px}
+h1{font-size:clamp(34px,6.5vw,66px);font-weight:950;line-height:.99;letter-spacing:-.045em;text-transform:uppercase;margin:0 auto 18px;max-width:900px;text-shadow:0 3px 20px #000}
+.gold-text{color:var(--gold);text-shadow:0 0 25px #ffad2760}
+.lead{max-width:630px;margin:0 auto 27px;color:#c5ccda;font-size:15px;line-height:1.7}
+.emblem{width:78px;height:78px;margin:0 auto 24px;border:2px solid #d89528;border-radius:50%;display:grid;place-items:center;position:relative;background:radial-gradient(circle,#3b2a19,#080d18 68%);box-shadow:0 0 34px #ffb72c3d,inset 0 0 20px #ffb72c22}
+.emblem:before,.emblem:after{content:"";position:absolute;inset:-8px;border-radius:50%;border:1px solid #ffd36b80;animation:orbit 8s linear infinite}.emblem:after{inset:7px;border-color:#00d9ff55;animation-direction:reverse;animation-duration:5s}
+.emblem span{font-size:27px;color:var(--gold2);text-shadow:0 0 18px var(--gold)}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.countdown{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;width:min(100%,680px);margin:0 auto 19px}
+.unit{position:relative;padding:20px 8px 16px;border:1px solid #ffba3d;border-radius:7px;background:linear-gradient(145deg,#081725,#090d19 72%);box-shadow:0 0 22px #ffac2024,inset 0 0 22px #ffba3d0a}
+.unit:before{content:"";position:absolute;inset:4px;border:1px solid #e6a32b22;border-radius:4px;pointer-events:none}
+.num{display:block;font-size:clamp(29px,5.7vw,51px);font-weight:950;line-height:1;color:var(--gold2);text-shadow:0 0 24px #ffbc3b68;font-variant-numeric:tabular-nums}
+.unit small{display:block;margin-top:10px;font-size:10px;font-weight:800;letter-spacing:.18em;color:#f5f2e8}
+.micro{font-size:10px;font-weight:700;letter-spacing:.22em;color:#9fa7b9;margin:0 0 25px}
+.features{display:flex;justify-content:center;gap:0;flex-wrap:wrap;margin:0 auto}
+.feature{display:flex;align-items:center;gap:8px;padding:9px 17px;color:#f3e7c8;font-size:11px;font-weight:700;letter-spacing:.06em;border-right:1px solid #ffc64a70}
+.feature:last-child{border:0}.feature i{font-style:normal;color:var(--gold);font-size:17px}
+.launch{display:none}.launch.visible{display:block;animation:rise .8s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(20px);filter:blur(5px)}to{opacity:1;transform:none;filter:blur(0)}}
+.stage{position:relative;isolation:isolate;overflow:hidden;margin:0 auto 20px;width:min(100%,940px);min-height:470px;border:1px solid #ffcb5c;border-radius:5px;background:radial-gradient(ellipse at 50% 28%,#19334a 0,#07101e 55%,#03050b 100%);box-shadow:0 0 55px #ffad2424,inset 0 0 80px #ff9f1610;padding:34px 20px}
+.stage:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 100%,#ffad1b35,transparent 38%),linear-gradient(90deg,#ffbc3025,transparent 22%,transparent 78%,#ffbc3025)}
+.curtains{position:absolute;inset:0;display:flex;z-index:5;pointer-events:none}
+.curtains span{width:50%;height:100%;background:repeating-linear-gradient(90deg,#080719 0,#100d26 13%,#24142f 22%,#0a0918 35%);border:1px solid #d79c3e66;box-shadow:inset 0 0 45px #000,0 0 28px #ffad2025}
+.curtains span:first-child{transform-origin:left center}.curtains span:last-child{transform-origin:right center}
+.curtains.open span:first-child{animation:left-open 1.65s cubic-bezier(.72,0,.22,1) forwards}.curtains.open span:last-child{animation:right-open 1.65s cubic-bezier(.72,0,.22,1) forwards}
+@keyframes left-open{to{transform:perspective(900px) rotateY(-95deg) translateX(-105%);opacity:.12}}@keyframes right-open{to{transform:perspective(900px) rotateY(95deg) translateX(105%);opacity:.12}}
+.reveal-content{visibility:hidden}.reveal-content.show{visibility:visible;animation:rise .85s .15s both}
+.reveal-logo{width:min(235px,65vw);max-height:90px;object-fit:contain;display:block;margin:0 auto 10px}
+.available{font-size:clamp(35px,6.2vw,63px);line-height:.98;letter-spacing:-.045em;font-weight:950;text-transform:uppercase;margin:0 0 12px;color:#fff;text-shadow:0 3px 0 #663300,0 0 28px #ffb32866}
+.subline{display:inline-block;background:linear-gradient(90deg,#ffae1b,#ffe99a,#ffae1b);color:#090a10;padding:12px 23px;font-size:clamp(12px,2.2vw,18px);font-weight:950;text-transform:uppercase;letter-spacing:.06em;clip-path:polygon(4% 0,96% 0,100% 50%,96% 100%,4% 100%,0 50%);margin:0 auto 25px}
+.offer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;width:min(100%,620px);margin:0 auto 19px}
+.offer{padding:16px 10px 15px;border:1px solid #ffc64a;background:linear-gradient(145deg,#090d18,#171321);box-shadow:0 0 22px #ffb12c1b;border-radius:5px}
+.offer small{display:block;font-size:11px;font-weight:800;letter-spacing:.12em;color:#f4f0e6;margin-bottom:5px}
+.offer strong{display:inline-block;font-size:clamp(32px,5.4vw,54px);line-height:1;font-weight:950;color:var(--gold2);text-shadow:0 0 22px #ffc54c48}
+.offer em{font-style:normal;color:#fff;font-size:12px}
+.offer.goal strong{color:#00dcff;text-shadow:0 0 20px #00cfff4f}
+.target-note{display:block;color:#c9cedb;font-size:10px;margin-top:7px}
+.auto{font-size:13px;font-weight:950;letter-spacing:.23em;color:var(--gold2);margin:0 0 21px}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-width:250px;padding:15px 26px;background:linear-gradient(100deg,#ffae1b,#ffed9a,#ffb22b);color:#090b12;text-decoration:none;font-weight:950;letter-spacing:.04em;text-transform:uppercase;clip-path:polygon(4% 0,96% 0,100% 50%,96% 100%,4% 100%,0 50%);box-shadow:0 0 28px #ffb32355;transition:filter .2s,transform .2s}
+.cta:hover{filter:brightness(1.1);transform:translateY(-2px)}
+.risk{max-width:720px;margin:19px auto 0;color:#9098ab;font-size:10px;line-height:1.6}
+footer{margin-top:29px;color:#777f96;font-size:9px;font-weight:800;letter-spacing:.24em}
+@media(max-width:520px){main{padding:25px 12px}.logo{margin-bottom:23px}.countdown{gap:6px}.unit{padding:16px 3px 13px}.unit small{font-size:8px;letter-spacing:.1em}.stage{padding:29px 10px;min-height:430px}.offer-grid{gap:7px}.offer{padding:14px 5px}.offer small{font-size:9px;letter-spacing:.05em}.feature{padding:8px 10px;font-size:10px}.features{max-width:360px}.available{font-size:35px}.subline{padding:11px 14px}
+body.full-launch .stage{padding:22px 12px;min-height:100vh}
+body.full-launch .offer-grid{gap:8px}
+body.full-launch .offer{padding:15px 6px}
+body.full-launch .offer small{font-size:9px;letter-spacing:.05em}
+body.full-launch .available{font-size:clamp(38px,10vw,54px)}
+body.full-launch .subline{padding:12px 15px}
+body.full-launch .reveal-logo{width:min(230px,62vw)}
+body.full-launch .risk{font-size:9px;margin-top:13px}
+body.full-launch .cta{min-width:220px;padding:16px 22px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}}
+</style>
+</head>
+<body><div class="ambient"></div>
+<main><section class="wrap">
+<img class="logo" src="assets/lumora-logo.png" alt="LUMORA">
+<div id="countdown-view">
+<p class="eyebrow">The next era of mobile trading</p>
+<h1>The future of trading<br><span class="gold-text">is almost here</span></h1>
+<p class="lead">Get ready for the launch of LUMORA Forex Mobile Bot. The curtain is about to open.</p>
+<div class="emblem"><span>✦</span></div>
+<div class="countdown" aria-label="Launch countdown">
+<div class="unit"><span class="num" id="days">01</span><small>DAYS</small></div>
+<div class="unit"><span class="num" id="hours">13</span><small>HOURS</small></div>
+<div class="unit"><span class="num" id="minutes">54</span><small>MINUTES</small></div>
+<div class="unit"><span class="num" id="seconds">51</span><small>SECONDS</small></div>
+</div>
+<p class="micro">COUNTDOWN TO LAUNCH • CURTAIN OPENS AT ZERO</p>
+<div class="features">
+<div class="feature"><i>♙</i> MOBILE TRADING</div><div class="feature"><i>⚙</i> AUTO BOT</div><div class="feature"><i>↗</i> DAILY PROFIT GOAL</div><div class="feature"><i>⬡</i> RISK AWARENESS</div>
+</div>
+</div>
+<div id="launch-view" class="launch">
+<div class="stage">
+<div class="curtains" id="curtains"><span></span><span></span></div>
+<div class="reveal-content" id="reveal-content">
+<img class="reveal-logo" src="assets/lumora-logo.png" alt="LUMORA">
+<p class="eyebrow">Forex Mobile Bot</p>
+<h2 class="available">Now Available!</h2>
+<div class="subline">Your trading assistant anytime, anywhere</div>
+<div class="offer-grid">
+<div class="offer"><small>MONTHLY ACCESS</small><strong>$37</strong><em> / month</em></div>
+<div class="offer goal"><small>DAILY PROFIT GOAL</small><strong>$10</strong><span class="target-note">Target, not guaranteed</span></div>
+</div>
+<p class="auto">✦ AUTO EARN BOT ✦</p>
+<a class="cta" id="cta" href="https://lumora-scalp.vercel.app/" target="_self" rel="noopener">Get Started Now <span>»</span></a>
+</div></div>
+<p class="risk">Forex trading involves risk and losses are possible. The $10 daily profit goal is a target, not a guarantee. Actual results depend on market conditions and account settings.</p>
+</div>
+<footer>SMARTER TRADING STARTS WITH LUMORA</footer>
+</section></main>
+<script>
+/* Shared launch deadline for every visitor: 15 Oct 2026, 10:02:51 Sri Lanka time (UTC+05:30). */
+const LAUNCH_AT = new Date("2026-10-15T10:00:00+05:30").getTime();
+const el = id => document.getElementById(id);
+let launched = false;
+function launch(){
+ if(launched)return; launched=true;
+ document.body.classList.add("full-launch");
+ el("countdown-view").style.display="none";
+ el("launch-view").classList.add("visible");
+ requestAnimationFrame(()=>{el("curtains").classList.add("open");setTimeout(()=>el("reveal-content").classList.add("show"),680);});
+}
+function tick(){
+ const left=LAUNCH_AT-Date.now();
+ if(left<=0){launch();return;}
+ el("days").textContent=String(Math.floor(left/86400000)).padStart(2,"0");
+ el("hours").textContent=String(Math.floor(left%86400000/3600000)).padStart(2,"0");
+ el("minutes").textContent=String(Math.floor(left%3600000/60000)).padStart(2,"0");
+ el("seconds").textContent=String(Math.floor(left%60000/1000)).padStart(2,"0");
+}
+tick();setInterval(tick,1000);
+</script>
+</body></html>
